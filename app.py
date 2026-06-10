@@ -25,7 +25,7 @@ def normalize_sektor(x):
 # ==================== 2. LOAD & CLEAN DATA ====================
 @st.cache_data
 def load_data():
-    url = "https://docs.google.com/spreadsheets/d/13McAh50P4ZEHirNn_dHp1JpoywrnQ7bpsRNPToDjKhY/edit?usp=sharing"
+    url = "https://docs.google.com/spreadsheets/d/13McAh50P4ZEHirNn_dHp1JpoywrnQ7bpsRNPToDjKhY/export?format=csv&gid=448442818"
     df = pd.read_csv(url)
     df.columns = df.columns.str.strip()
 
