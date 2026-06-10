@@ -25,7 +25,8 @@ def normalize_sektor(x):
 # ==================== 2. LOAD & CLEAN DATA ====================
 @st.cache_data
 def load_data():
-    df = pd.read_csv('data_g.csv')
+    url = "https://docs.google.com/spreadsheets/d/13McAh50P4ZEHirNn_dHp1JpoywrnQ7bpsRNPToDjKhY/edit?usp=sharing"
+    df = pd.read_csv(url)
     df.columns = df.columns.str.strip()
     
     df['Tanggal Putusan'] = pd.to_datetime(df['Tanggal Putusan'], format='%d/%m/%Y', errors='coerce')
