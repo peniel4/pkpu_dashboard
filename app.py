@@ -91,7 +91,7 @@ if pn_selected:
 
 # ==================== 4. HEADER & KPI ====================
 st.title("Dashboard  Kasus PKPU")
-st.markdown("**Analisis sektoral & geografis Putusan Penundaan Kewajiban Pembayaran Utang (PKPU)**")
+st.markdown("**Analisis sektoral & geografis Putusan Penundaan Kewajiban Pembayaran Utang (PKPU) (2024-2026)**")
 st.markdown("---")
 
 col1, col2, col3, col4, col5 = st.columns(5)
