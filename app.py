@@ -28,6 +28,12 @@ def load_data():
     url = "https://docs.google.com/spreadsheets/d/13McAh50P4ZEHirNn_dHp1JpoywrnQ7bpsRNPToDjKhY/edit?usp=sharing"
     df = pd.read_csv(url)
     df.columns = df.columns.str.strip()
+
+    st.write("Kolom:")
+    st.write(df.columns.tolist())
+    
+    st.write("5 baris pertama:")
+    st.write(df.head())
     
     df['Tanggal Putusan'] = pd.to_datetime(df['Tanggal Putusan'], format='%d/%m/%Y', errors='coerce')
     df['Tahun'] = df['Tahun'].astype(int)
