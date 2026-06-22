@@ -29,7 +29,12 @@ def load_data():
     df.columns = df.columns.str.strip()
     
     df['Tanggal Putusan'] = pd.to_datetime(df['Tanggal Putusan'], format='%d/%m/%Y', errors='coerce')
-    df['Tahun'] = df['Tahun'].astype(int)
+    df['Tahun'] = pd.to_numeric(df['Tahun'], errors='coerce')
+
+    if df['Tahun'].isna().any():
+        st.warning("Terdapat data Tahun yang kosong atau tidak valid.")
+
+    df['Tahun'] = df['Tahun'].astype('Int64')
     df['Bulan'] = df['Tanggal Putusan'].dt.month
     df['Bulan_Nama'] = df['Tanggal Putusan'].dt.strftime('%b %Y')
     
